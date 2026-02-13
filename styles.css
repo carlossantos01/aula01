@@ -1,0 +1,68 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    background-image: url("assets/fundo2.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(194, 160, 97);
+}
+
+img {
+    max-width: 40%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
+
+p {
+    text-align: justify;
+    font-size: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+hr {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+button {
+    display: block;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ol {
+    margin: 10px auto;
+    padding: 30px auto;
+    margin-bottom: 30px;
+    text-align: center;
+    list-style-position: inside;
+}
+
+li {
+    font-size: 14px;
+    margin: 15px;
+}
+
+a {
+    text-decoration: none;
+}

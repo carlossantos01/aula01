@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+   background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54,71));
+   background-attachment: fixed;
+}
+h1{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+    background-color: rgba( 0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    width: 50%;
+}
+fieldset{
+    border: 3px solid dodgerblue;
+}
+
+main{
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px black;
+}
+.container{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+#gerarBotao:hover{
+    color:yellow;
+    background-color: red;
+    transform: translate(5px 5px);
+}
+#resultadoTabuada{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 1em;
+}
+label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    text-align: center;
+    margin: auto;
+}
+#numeroInput{
+    width: 50px;
+    margin: auto;
+}

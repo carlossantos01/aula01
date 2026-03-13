@@ -1,0 +1,123 @@
+:root {
+    --mk-blue: #0072CE;
+    --mk-yellow: #FFD200;
+    --mk-red: #E60012;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Black', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Link para a sua imagem */
+    background-image: url('mariokart8deluxe.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Camada escura para dar leitura ao formulário */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    padding: 30px;
+    border-radius: 30px;
+    border: 4px solid var(--mk-yellow);
+    width: 350px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 210, 0, 0.3);
+}
+
+.header-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 2px solid white;
+}
+
+h1 {
+    font-style: italic;
+    text-shadow: 2px 2px 5px #000;
+    margin: 10px 0 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: var(--mk-yellow);
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+button {
+    background: linear-gradient(to bottom, var(--mk-yellow), #ffaa00);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+    box-shadow: 0 4px 0 #996600;
+}
+
+button:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    display: none;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px #000;
+    animation: zoomIn 0.3s ease-out;
+}
+
+.aprovado { background-color: rgba(40, 167, 69, 0.9); border: 2px solid #fff; }
+.reprovado { background-color: rgba(230, 0, 18, 0.9); border: 2px solid #fff; }
+
+@keyframes zoomIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

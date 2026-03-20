@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG do Chayt - Sistema de Alistamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img src="Grand_Chase_(1).webp" alt="Logo RPG" class="logo">
+
+    <div class="card">
+        <h1>Informe sua idade</h1>
+        <p>Bem-vindo ao RPG do Chayt. Você é um(a) aventureiro(a) prestes a embarcar em uma jornada épica. Suas escolhas moldarão o destino do reino.</p>
+
+        <hr class="divider">
+
+        <h2>Instruções</h2>  
+        <p>Digite sua idade para definir seu status na guilda:</p>
+        
+        <input type="number" id="idade" name="idade" placeholder="??">
+        <br>
+        <button onclick="starGame()">Consultar Oráculo</button>
+
+        <div class="result-box">
+            <span id="game-container"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

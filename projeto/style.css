@@ -1,0 +1,174 @@
+/* Reset padrão e configurações de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* PAPEL DE FUNDO (USANDO A SEGUNDA IMAGEM FORNECIDA) */
+    background-image: url('vt.jpg');
+    background-size: cover; /* Cobre toda a tela */
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* O fundo não rola junto com o site */
+    
+    
+    color: #fff;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.logo-site-container {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 25px;
+}
+
+#logo-principal {
+    width: 150px; 
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(190, 22, 34, 0.7));
+}
+
+header h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8); 
+}
+
+header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 5px;
+}
+
+
+.secao-cadastro {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-formulario {
+    background: #000; 
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid #be1622; 
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card-formulario h3 {
+    text-align: center;
+    color: #be1622;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #be1622;
+    outline: none;
+    background: #1a1a1a;
+}
+
+button {
+    padding: 15px;
+    background-color: #be1622; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1a2b;
+    transform: translateY(-2px);
+}
+
+/* Design da Lista Dinâmica */
+.secao-lista {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 3px solid #be1622;
+    display: inline-block;
+    padding-bottom: 10px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.elenco-mostruario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.jogador-card {
+    background: #000;
+    border-left: 6px solid #be1622;
+    padding: 20px;
+    border-radius: 6px;
+    animation: slideIn 0.5s ease;
+}
+
+.jogador-card small {
+    color: #be1622;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.jogador-card h4 {
+    font-size: 1.5rem;
+}
+
+.divisor-linha {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #be1622, transparent);
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* Animação para novos itens na lista */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}

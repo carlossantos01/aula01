@@ -1,13 +1,42 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>projeto</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Oficial - EC Vitória (Gestão)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-site-container">
+            <img src="logoo.png" alt="Logo Leão Vitória" id="logo-principal">
+        </div>
+        <h1>Portal Oficial - EC Vitória</h1>
+        <p>Gestão Dinâmica do Elenco</p>
+    </header>
+
+    <main>
+        <section class="secao-cadastro">
+            <div class="card-formulario">
+                <h3>Cadastrar Novo Craque</h3>
+                <div class="form-inputs">
+                    <input type="text" id="nome_jogador" placeholder="Nome Completo do Jogador" autocomplete="off">
+                    <input type="text" id="posicao_jogador" placeholder="Posição (ex: Zagueiro)" autocomplete="off">
+                    <button id="btn_salvar">Salvar no Elenco</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor-linha"></div>
+
+        <section class="secao-lista">
+            <h2>Elenco Atualizado</h2>
+            <div id="grid-elenco" class="elenco-mostruario">
+                </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>

@@ -1,121 +1,69 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import logoVitoria from './assets/logo.png'; 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [elenco, setElenco] = useState([]);
+  const [formData, setFormData] = useState({
+    nome: '', origem: '', atributo: '', minibio: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const salvarNoElenco = (e) => {
+    e.preventDefault();
+    if (Object.values(formData).some(v => v === "")) return alert("Preencha tudo, Nego!");
+    
+    setElenco([...elenco, { ...formData, id: Date.now() }]);
+    setFormData({ nome: '', origem: '', atributo: '', minibio: '' });
+  };
+
+  const removerCraque = (id) => setElenco(elenco.filter(c => c.id !== id));
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="portal-container">
+      <header className="vitoria-header">
+        <img src={logoVitoria} alt="Logo Vitória" className="logo-img" />
+        <h1>SOU NEGO</h1>
+        <p className="subtitle">GESTÃO DINÂMICA DE ELENCO</p>
+      </header>
 
-      <div className="ticks"></div>
+      <main className="main-content">
+        <section className="cadastro-section">
+          <form className="card-cadastro" onSubmit={salvarNoElenco}>
+            <h2>CADASTRAR CRAQUE</h2>
+            <input type="text" name="nome" placeholder="NOME E FUNÇÃO" value={formData.nome} onChange={handleChange} />
+            <div className="row">
+              <input type="text" name="origem" placeholder="ORIGEM" value={formData.origem} onChange={handleChange} />
+              <input type="text" name="atributo" placeholder="ATRIBUTO PRINCIPAL" value={formData.atributo} onChange={handleChange} />
+            </div>
+            <textarea name="minibio" placeholder="MINIBIO (RESUMO DE 2 LINHAS)" value={formData.minibio} onChange={handleChange} maxLength="150" />
+            <button type="submit">SALVAR NO ELENCO</button>
+          </form>
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <section className="lista-section">
+          <h2 className="titulo-lista">ELENCO ATUALIZADO</h2>
+          <div className="grid-elenco">
+            {elenco.map(c => (
+              <div key={c.id} className="craque-card">
+                <div className="card-topo"><h3>{c.nome.toUpperCase()}</h3></div>
+                <div className="card-corpo">
+                  <p><strong>ORIGEM:</strong> {c.origem.toUpperCase()}</p>
+                  <p><strong>ATRIBUTO:</strong> {c.atributo.toUpperCase()}</p>
+                  <div className="bio-container">{c.minibio}</div>
+                </div>
+                <button className="btn-remover" onClick={() => removerCraque(c.id)}>REMOVER</button>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,42 +1,43 @@
-const campoNome = document.getElementById('nome_jogador');
-const campoPosicao = document.getElementById('posicao_jogador');
-const botaoSalvar = document.getElementById('btn_salvar');
-const containerLista = document.getElementById('grid-elenco');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form-jogador');
+    const gridElenco = document.getElementById('grid-elenco');
 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-function cadastrarEExibir() {
-  
-    const nome = campoNome.value.trim();
-    const posicao = campoPosicao.value.trim();
+       
+        const nome = document.getElementById('NOME').value;
+        const origem = document.getElementById('ORIGEM').value;
+        const atributo = document.getElementById('ATRIBUTO').value;
+        const minibio = document.getElementById('BIO').value;
 
-   
-    if (nome === "" || posicao === "") {
-        alert("Ops! Preencha o nome e a posição do novo craque!");
-        return;
-    }
+        
+        const card = document.createElement('div');
+        card.className = 'vitoria-card';
+        
+        card.innerHTML = `
+            <div class="card-header">
+                <h3>${nome}</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>ORIGEM:</strong> ${origem}</p>
+                <p><strong>HABILIDADE:</strong> ${atributo}</p>
+                <div class="bio-box">${BIO}</div>
+            </div>
+            <button class="btn-delete">DISPENSAR</button>
+        `;
 
-    const cardJogador = document.createElement('div');
-    cardJogador.className = 'jogador-card'; 
+       
+        card.querySelector('.btn-delete').addEventListener('click', () => {
+            card.style.opacity = '0';
+            setTimeout(() => card.remove(), 300);
+        });
 
-    cardJogador.innerHTML = `
-        <small>${posicao}</small>
-        <h4>${nome}</h4>
-    `;
+        
+        gridElenco.appendChild(card);
 
-   
-    containerLista.appendChild(cardJogador);
-
-  
-    campoNome.value = "";
-    campoPosicao.value = "";
-    campoNome.focus();
-}
-
-
-botaoSalvar.addEventListener('click', cadastrarEExibir);
-
-campoPosicao.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        cadastrarEExibir();
-    }
+        
+        form.reset();
+        document.getElementById('nome').focus();
+    });
 });

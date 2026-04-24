@@ -6,7 +6,11 @@ export default function Footer(){
         <footer>
             <div>
                 <strong>Contabilidade Simples</strong>  - CNPJ  00.000.000./0001
-                <p>Rua Exemplo, 123, - Centro - Salvador/BA</p>
+                <br />
+                Rua Exemplo, 123, - Centro - Salvador/BA
+                <br />
+                © {new Date().getFullYear} Todos os direitos reservados
+                
             </div>
         </footer>
     )

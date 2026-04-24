@@ -1,18 +1,18 @@
 import './style.css'
-import {Link,Navalink} from 'react-router-dom'
 import logo from '../../assets'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
     return(
         <header>
             <div>
-                <link to="/">
+                <Link to="/">
                 <img src={logo} alt= "Logo da Empresa"/>
                 <span>Contabilidade Simples</span>
-                </link>
+                </Link>
                 <nav>
-                    <navelink to= "/sobre-nos">Sobre nós</navelink>
-                    <navelink to="/fale-conosco">Fale-conosco</navelink>
+                    <NavLink to= "/sobre-nos">Sobre nós</NavLink>
+                    <NavLink to="/fale-conosco">Fale-conosco</NavLink>
                 </nav>
             </div>
         </header>

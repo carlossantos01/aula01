@@ -5,8 +5,8 @@ export default function SobreNos(){
         <section>
             <h1>Sobre nós</h1>
             <p>
-                Somo um escriório de contabilidade com foco em pequenas e médias empresas.
-                Acreditamos que ficamos claras e processos simples aceleram o crescimento.
+                Somos um escritório de contabilidade com foco em pequenas e médias empresas.
+                Acreditamos que ficamos com processos claros e simples aceleram o crescimento.
             </p>
             <ul>
                 <li>+10 anos de mercado</li>

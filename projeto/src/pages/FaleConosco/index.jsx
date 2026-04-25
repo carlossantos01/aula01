@@ -11,7 +11,7 @@ export default function FaleConosco(){
         <section>
             <h1>Fale Conosco</h1>
             <p>Tire dúvida e peça um orçamento sem compromisso.</p>
-            <from onSubmit= {handleSubmit}>
+            <form onSubmit= {handleSubmit}>
                 <div>
                     <label>
                         <span>Nome</span>
@@ -23,7 +23,7 @@ export default function FaleConosco(){
                     </label>
                     <label>
                         <span>Telefone</span>
-                        <input type="telefone" required placeholder='(00) 90000-0000' />
+                        <input type="tel" required placeholder='(00) 90000-0000' />
                     </label>
                 </div>
                 <label>
@@ -37,7 +37,7 @@ export default function FaleConosco(){
 
                     <button type='submit'>Enviar</button>
 
-            </from>
+            </form>
         </section>
     )
 }
